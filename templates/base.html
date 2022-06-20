@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBoxes</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='form.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='error.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <!-- CSS -->
+        <link href="{{url_for('static', filename='prod_page.css')}}" rel="stylesheet">
+        <meta name="robots" content="noindex,follow" />
+
+    <style>
+        footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 40px;
+            background: grey;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url_for('index' ) }}">Smart Boxes</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="">Home</a></li> -->
+            <li><a href="{{ url_for('index' ) }}">Product Details</a></li>
+            <li><a href="{{ url_for('feedback' ) }}">Submit Feedback</a></li>
+            <li><a href="{{ url_for('show_feedback' ) }}">Show Feedbacks</a></li>
+          </ul>
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul> -->
+        </div>
+      </nav>
+
+      
+      {% block content %}
+          
+      {% endblock content %}
+
+      <footer>
+        <!-- <p>Author: Smart Boxes</p> -->
+        <p><a href="mailto:sb@example.com">Email Us at: sb@example.com</a></p>
+      </footer>
+</body>
+</html>

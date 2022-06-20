@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+
+<div class="Jumbotron">
+    <h1>Here are the feedbacks!</h1>
+
+    {% if all_feedbacks %}
+    <ul>
+        {% for feedback in all_feedbacks %}
+        <li style="color:rgb(255, 255, 255)">Feedback No: {{feedback.id}} ({{feedback.date_time}})</li>
+            <p style="color:rgb(240, 225, 7)">{{feedback.name}} ({{feedback.email}})</p>
+            <p style="color:rgb(126, 229, 23)">Message: {{feedback.message}}</p>
+            <br>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2 style="color:white">No feedbacks have been provided yet! :(</h2>
+        
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

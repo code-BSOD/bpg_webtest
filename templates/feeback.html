@@ -1,0 +1,42 @@
+{% extends 'base.html' %}}
+
+{% block content %}
+
+
+
+
+   <h1>Feedback form for Smartboxes Team</h1>
+<div class="wpcf7" id="wpcf7-f156-p143-o1 formwrap">
+    <form method="POST" class="wpcf7-form" novalidate="novalidate">
+        <div style="display: none;">
+            <input type="hidden" name="_wpcf7" value="156">
+            <input type="hidden" name="_wpcf7_version" value="3.7.2">
+            <input type="hidden" name="_wpcf7_locale" value="en_US">
+            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f156-p143-o1">
+            <input type="hidden" name="_wpnonce" value="d1da331d93">
+        </div>
+        <p>
+           <span class="wpcf7-form-control-wrap Name">
+             <!-- <input type="text" name="user_name" value="" size="40" class="nameinput wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name"> -->
+          {{ form.hidden_tag()}}
+          {{ form.name(class_="nameinput wpcf7-form-control wpcf7-text wpcf7-validates-as-required", placeholder="Name")}}
+            </span>
+          <span class="wpcf7-form-control-wrap Email">
+            <!-- <input type="email" name="user_email"  size="40" class="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email"> -->
+            {{ form.email(class_="emailinput wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email", placeholder="Email (Optional)")}}
+        </span>
+      
+          <span class="wpcf7-form-control-wrap Message">
+            <!-- <textarea name="user_feedback" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message"></textarea> -->
+            {{ form.message(class_="wpcf7-form-control wpcf7-textarea", placeholder="Feeback/Message")}}
+        </span>
+          <!-- <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit btn"> -->
+          {{ form.submit(class_="wpcf7-form-control wpcf7-submit btn")}}
+          <img class="ajax-loader" src="http://www.jordancundiff.com/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;">
+      </p>
+      <div class="wpcf7-response-output wpcf7-display-none">
+      </div>
+  </form>
+</div>
+
+{% endblock %}
