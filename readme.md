@@ -6,13 +6,17 @@ Steps:
 
 3. First we need to initialize the SQLite Database on the local computer.
 4. Run the following commands in Terminal.
+
     > a. export FLASK_APP=app.py
+
     > b. flask db init
+
     > c. flask db migrate -m 'added migration'
+
     > d. flask db upgrade
 
 5. Run the command in the terminal to run the experimental webserver
-    python app.py
+>python app.py
 
 We should be able to access our website from localhost or http://127.0.0.1:5000. But we might need to do some IP and Port binding before we serve it to the public.
 
